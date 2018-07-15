@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.meteoro.kedditlearn.R
+import com.meteoro.kedditlearn.commons.RedditNewsItem
 import com.meteoro.kedditlearn.commons.extensions.inflate
 import com.meteoro.kedditlearn.features.news.adapter.NewsAdapter
 import kotlinx.android.synthetic.main.news_fragment.*
@@ -30,6 +31,21 @@ class NewsFragment : Fragment() {
         newsList.layoutManager = LinearLayoutManager(context)
 
         initAdapter()
+
+        if (savedInstanceState == null) {
+            val news = mutableListOf<RedditNewsItem>()
+            for (i in 1..10) {
+                news.add(RedditNewsItem(
+                        "author$i",
+                        "Title $i",
+                        i, // number of comments
+                        1457207701L - i * 200, // time
+                        "https://picsum.photos/200/200?image=$i", // image url
+                        "url"
+                ))
+            }
+            (newsList.adapter as NewsAdapter).addNews(news)
+        }
     }
 
     private fun initAdapter() {
