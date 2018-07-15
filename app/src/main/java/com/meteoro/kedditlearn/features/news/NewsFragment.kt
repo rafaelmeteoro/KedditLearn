@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.meteoro.kedditlearn.R
-import com.meteoro.kedditlearn.commons.inflate
+import com.meteoro.kedditlearn.commons.extensions.inflate
 import com.meteoro.kedditlearn.features.news.adapter.NewsAdapter
 import kotlinx.android.synthetic.main.news_fragment.*
 

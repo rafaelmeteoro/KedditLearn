@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import com.meteoro.kedditlearn.R
 import com.meteoro.kedditlearn.commons.adapter.ViewType
 import com.meteoro.kedditlearn.commons.adapter.ViewTypeDelegateAdapter
-import com.meteoro.kedditlearn.commons.inflate
+import com.meteoro.kedditlearn.commons.extensions.inflate
 
 class LoadingDelegateAdapter : ViewTypeDelegateAdapter {
 
