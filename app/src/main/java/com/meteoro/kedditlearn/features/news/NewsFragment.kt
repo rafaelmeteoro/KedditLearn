@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.meteoro.kedditlearn.R
 import com.meteoro.kedditlearn.commons.inflate
+import kotlinx.android.synthetic.main.news_fragment.*
 
 class NewsFragment : Fragment() {
 
@@ -16,11 +17,18 @@ class NewsFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val view = container?.inflate(R.layout.news_fragment)
-        newsList = view?.findViewById(R.id.news_list) as RecyclerView
-        newsList?.setHasFixedSize(true) // use this setting to improve performance
-        newsList?.layoutManager = LinearLayoutManager(context)
+//        val view = container?.inflate(R.layout.news_fragment)
+//        newsList = view?.findViewById(R.id.news_list) as RecyclerView
+//        newsList?.setHasFixedSize(true) // use this setting to improve performance
+//        newsList?.layoutManager = LinearLayoutManager(context)
 
-        return view
+        return container?.inflate(R.layout.news_fragment)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        news_list.setHasFixedSize(true)
+        news_list.layoutManager = LinearLayoutManager(context)
     }
 }
