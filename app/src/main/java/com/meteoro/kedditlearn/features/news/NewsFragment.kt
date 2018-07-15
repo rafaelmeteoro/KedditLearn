@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.meteoro.kedditlearn.R
 import com.meteoro.kedditlearn.commons.inflate
+import com.meteoro.kedditlearn.features.news.adapter.NewsAdapter
 import kotlinx.android.synthetic.main.news_fragment.*
 
 class NewsFragment : Fragment() {
@@ -27,5 +28,13 @@ class NewsFragment : Fragment() {
 
         newsList.setHasFixedSize(true)
         newsList.layoutManager = LinearLayoutManager(context)
+
+        initAdapter()
+    }
+
+    private fun initAdapter() {
+        if (newsList.adapter == null) {
+            newsList.adapter = NewsAdapter()
+        }
     }
 }
