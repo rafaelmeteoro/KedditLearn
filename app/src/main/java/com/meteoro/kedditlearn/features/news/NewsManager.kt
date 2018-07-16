@@ -1,15 +1,17 @@
 package com.meteoro.kedditlearn.features.news
 
 import com.meteoro.kedditlearn.api.NewsAPI
-import com.meteoro.kedditlearn.api.NewsRestAPI
 import com.meteoro.kedditlearn.commons.RedditNews
 import com.meteoro.kedditlearn.commons.RedditNewsItem
 import rx.Observable
+import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * News Manager allows you to request more news from Reddit API.
  * */
-class NewsManager(private val api: NewsAPI = NewsRestAPI()) {
+@Singleton
+class NewsManager @Inject constructor(private val api: NewsAPI) {
 
     /**
      * Returns Reddit News paginated by the given limit.
