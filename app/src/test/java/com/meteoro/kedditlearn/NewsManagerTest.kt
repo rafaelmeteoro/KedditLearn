@@ -7,7 +7,6 @@ import okhttp3.MediaType
 import okhttp3.ResponseBody
 import org.junit.Before
 import org.junit.Test
-import org.mockito.Mockito
 import org.mockito.Mockito.`when`
 import org.mockito.Mockito.anyString
 import retrofit2.Call
@@ -95,5 +94,3 @@ class NewsManagerTest {
         assert(testSub.onErrorEvents.size == 1)
     }
 }
-
-inline fun <reified T : Any> mock(): T = Mockito.mock(T::class.java)
